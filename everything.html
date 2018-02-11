@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<style>
+body {font-family: Arial;}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #617ba5;
+}
+
+.tabContent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+
+a:link {
+    color: #4b6cf2;
+}
+a:visited {
+    color: #293b82;
+}
+a:hover {
+    color: #3fffc5;
+}
+a:active {
+    color: #220363;
+    text-decoration: none;
+}
+
+</style>
+<body>
+
+<div class="tab">
+  <button class="tabLinks" onclick="openLinks(event, 'buttonHome') "id="defaultOpen">Home</button>
+  <button class="tabLinks" onclick="openLinks(event, 'buttonProjects')">Projects</button>
+  <button class="tabLinks" onclick="openLinks(event, 'buttonInfo')">Info</button>
+</div>
+
+<div id="buttonHome" class="tabContent">
+  <h3>Home</h3>
+  <p> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+</div>
+
+<div id="buttonProjects" class="tabContent">
+  <h3>Projects</h3>
+<p>These are all my projects so far.</p>
+
+<ul>
+  <li><a href="https://gist.github.com/siccricc/05cfde546de0125407bc292a8ccf1617">[HTML,CSS,Javasript] Button Fest</a></li>  
+  <li><a href="https://gist.github.com/siccricc/7d1896d950d47f8f753e7a8106b0fb73"> [HTML,CSS,Javasript] Converter</a></li>
+  <li><a href="https://gist.github.com/siccricc/6fd31bca76f3fdbe286995cee050da4b">[HTML,CSS,Javasript] Calculator</a></li>
+</ul>  
+</div>
+
+<div id="buttonInfo" class="tabContent">
+  <h3>Info</h3>
+  <p> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus. </p>
+</div>
+
+<script>
+function openLinks(evt, buttonName) {
+  
+  var i, tabContent, tabLinks;
+    
+    tabContent = document.getElementsByClassName("tabContent");
+  for (i = 0; i < tabContent.length; i++) {
+      tabContent[i].style.display = "none";
+  }
+  
+  tabLinks = document.getElementsByClassName("tabLinks");
+  for (i = 0; i < tabLinks.length; i++) {
+      tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+  }
+  
+  document.getElementById(buttonName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+document.getElementById("defaultOpen").click();
+
+</script>
+     
+</body>
+</html> 
