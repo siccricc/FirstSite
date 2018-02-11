@@ -3,14 +3,13 @@
 <head>
 </head>
 <style>
+/*----everything----*/
 body {font-family: Arial;}
-
 .tab {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
 }
-
 .tab button {
     background-color: inherit;
     float: left;
@@ -21,21 +20,17 @@ body {font-family: Arial;}
     transition: 0.3s;
     font-size: 17px;
 }
-
 .tab button:hover {
     background-color: #ddd;
 }
-
 .tab button.active {
     background-color: #617ba5;
 }
-
 .tabContent {
     display: none;
     padding: 6px 12px;
     border-top: none;
 }
-
 a:link {
     color: #4b6cf2;
 }
@@ -49,38 +44,222 @@ a:active {
     color: #220363;
     text-decoration: none;
 }
+/*--everything--*/
+/*----CalculaTHOR----*/
+html {
+    height: 120%;
+    background: white;
+    background: radial-gradient(circle, #ccffcc 70%, #173518);
+    background-size: 10px;
+}
+.calculator {
+    width: 900px;
+    height: auto;
+    margin: 250px auto;
+    padding: 50px 10px 20px;
+    background: #b3e6ff;
+    border-radius: 20px;
+    box-shadow: 5px 5px #00334d;
+}
+input[type=text] {
+    height: 40px;
+    width: 880px;
+    padding: 0 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    font-size: 17px;
+    line-height: 40px;
+    color: white;
+    text-shadow: 1px 1px #aaa;
+    text-align: right;
+    letter-spacing: 1px;
+    outline: 0;
+    float: right;
+}
+.whiteButtons {
+    height: 40px;
+    width: 212px;
+    padding: 0 10px;
+    background:#f2f2f2;
+    border-radius: 8px;
+    font-size: 17px;
+    line-height: 40px;
+    color: black;
+    text-shadow: 1px 1px #aaa;
+    text-align: center;
+    letter-spacing: 1px;
+    box-shadow: 1px 5px #0099e6;  
+    outline: 0;
+}
+.redButtons {
+    height: 40px;
+    width: 212px;
+    padding: 0 10px;
+    background:#ff7d5e;
+    border-radius: 8px;
+    font-size: 17px;
+    line-height: 40px;
+    color: black;
+    text-shadow: 1px 1px #aaa;
+    text-align: center;
+    letter-spacing: 1px;
+    box-shadow: 1px 5px #0099e6;
+    outline: 0;
+}
+.cButton {
+    height: 40px;
+    width: 212px;
+    padding: 0 10px;
+    background:#ffdb4d;
+    border-radius: 8px;
+    font-size: 17px;
+    line-height: 40px;
+    color: black;
+    text-shadow: 1px 1px #aaa;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+    box-shadow: 1px 5px #0099e6;
+    outline: 0;
+}
+.whiteButtons:hover {
+    background-color: #000000;
+    color: white;
+    box-shadow: #b3e6ff;
+}
+.redButtons:hover {
+    background-color: #000000;
+    color: white;
+    box-shadow: #b3e6ff;
+}
+.cButton:hover {
+    background-color: #000000;
+    color: white;
+    box-shadow: #b3e6ff;
+}
+/*----CalculaTHOR----*/
+/*----ButtonFest----*/
+
+/*----ButtonFest----*/
 
 </style>
 <body>
 
 <div class="tab">
-  <button class="tabLinks" onclick="openLinks(event, 'buttonHome') "id="defaultOpen">Home</button>
-  <button class="tabLinks" onclick="openLinks(event, 'buttonProjects')">Projects</button>
-  <button class="tabLinks" onclick="openLinks(event, 'buttonInfo')">Info</button>
+  <button class="tabLinks" onclick="openLinks(event, 'buttonCalculator') "id="defaultOpen">Calculator</button>
+  <button class="tabLinks" onclick="openLinks(event, 'buttonConverter')">Converter</button>
+  <button class="tabLinks" onclick="openLinks(event, 'buttonButtonFest')">Button Fest</button>
 </div>
-
-<div id="buttonHome" class="tabContent">
-  <h3>Home</h3>
-  <p> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+<!--Calculator-->
+<div id="buttonCalculator" class="tabContent">
+<div class="calculator">    
+    <div class="calculatorScreen">
+        <input type="text" id="result">
+    </div>
+    <div class="allCalculatorButtons">
+        <input type="reset"  class=cButton    value="C" id="C"         onclick="clearScreen()">
+        <input type="button" class=redButtons value="√" id='sqrt'      onclick="addToScreen('√')">
+        <input type="button" class=redButtons   value="(" onclick="addToScreen('(')">
+        <input type="button" class=redButtons   value=")" onclick="addToScreen(')')">
+        <p>
+        <input type="button" class=whiteButtons value="7" onclick="addToScreen('7')">
+        <input type="button" class=whiteButtons value="8" onclick="addToScreen('8')">
+        <input type="button" class=whiteButtons value="9" onclick="addToScreen('9')">
+        <input type="button" class=redButtons   value="÷" onclick="addToScreen('/')">
+        </p>
+        <p>
+        <input type="button" class=whiteButtons value="4" onclick="addToScreen('4')">
+        <input type="button" class=whiteButtons value="5" onclick="addToScreen('5')">
+        <input type="button" class=whiteButtons value="6" onclick="addToScreen('6')">
+        <input type="button" class=redButtons   value="x" onclick="addToScreen('*')">
+        </p>
+        <input type="button" class=whiteButtons value="1" onclick="addToScreen('1')">
+        <input type="button" class=whiteButtons value="2" onclick="addToScreen('2')">
+        <input type="button" class=whiteButtons value="3" onclick="addToScreen('3')">
+        <input type="button" class=redButtons   value="-" onclick="addToScreen('-')">
+        <p>
+        <input type="button" class=whiteButtons value="0" onclick="addToScreen('0')">
+        <input type="button" class=whiteButtons value="." onclick="addToScreen('.')">
+        <input type="button" class=redButtons   value="+" onclick="addToScreen('+')">
+        <input type="button" class=redButtons id=equalButton value="=" onclick="answer()">
+        </p>
+    </div>
 </div>
-
-<div id="buttonProjects" class="tabContent">
-  <h3>Projects</h3>
-<p>These are all my projects so far.</p>
-
-<ul>
-  <li><a href="https://gist.github.com/siccricc/05cfde546de0125407bc292a8ccf1617">[HTML,CSS,Javasript] Button Fest</a></li>  
-  <li><a href="https://gist.github.com/siccricc/7d1896d950d47f8f753e7a8106b0fb73"> [HTML,CSS,Javasript] Converter</a></li>
-  <li><a href="https://gist.github.com/siccricc/6fd31bca76f3fdbe286995cee050da4b">[HTML,CSS,Javasript] Calculator</a></li>
-</ul>  
 </div>
-
-<div id="buttonInfo" class="tabContent">
+<!--Calculator-->
+<!--ConverTHOR-->
+<div id="buttonConverter" class="tabContent">
+<h2>Converter</h2>
+<!--Pounds-->
+<p>
+  <label>Pounds</label>
+  <input id="inputPounds" type="number" placeholder="Pounds" oninput="poundConverter(this.value)" onchange="poundConverter(this.value)">
+</p>
+<p>Kilograms: <span id="outputKilograms"></span></p>
+<!--Miles-->
+<br>
+<p>
+  <label>Miles</label>
+  <input id="inputMiles" type="number" placeholder="Miles" oninput="mileConverter(this.value)" onchange="mileConverter(this.value)">
+</p>
+<p>Kilometers: <span id="outputKilometers"></span></p>
+<!--Gallons-->
+<br>
+<p>
+  <label>Gallons</label>
+  <input id="inputGallons" type="number" placeholder="Gallons" oninput="gallonConverter(this.value)" onchange="gallonConverter(this.value)">
+</p>
+<p>Liters: <span id="outputLiters"></span></p>
+</div>
+<!--ConverTHOR-->
+<!--ButtonFest-->
+<div id="buttonButtonFest" class="tabContent">
   <h3>Info</h3>
-  <p> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus. </p>
+<hr/>
+<h1>Program 1 - Even or Odd</h1>
+<input type="text" id ="input1"/>
+<button type="button" onclick="document.getElementById('demo1').innerHTML = evenOrOdd(document.getElementById('input1').value)"> Even or Odd?</button>
+<p id="demo1"></p>
+<hr/>
+<hr/>
+<h1>Program 2 - Prime number</h1>
+<input type="text" id ="input2"/>
+<button type= "button" onclick="document.getElementById('demo2').innerHTML = primeNumber(document.getElementById('input2').value)"> Prime number?</button>
+<p id="demo2"></p>
+<hr/>
+<h1>Program 3 - Multiple Buttons</h1>
+<table>
+<div class="grid-container">
+  <div class="grid-item"><input type="text" id="input3"/></div>
+<!--radical-->
+  <div class="grid-item"><button type="button" onclick="document.getElementById('demo3').innerHTML = radicalCalculator(document.getElementById('input3').value)"> √ ̅</button></div>
+  <div class="grid-item"><p id="demo3"></p></div>
+<!--square-->
+  <div class="grid-item"><button type="button" onclick="document.getElementById('demo4').innerHTML = squareCalculator(document.getElementById('input3').value)">x²</button></div>
+  <div class="grid-item"><p id="demo4"></p></div>
+<!--logarithm-->
+  <div class="grid-item"><button type="button" onclick="document.getElementById('demo5').innerHTML = logCalculator(document.getElementById('input3').value)">log</button></div>
+  <div class="grid-item"><p id="demo5"></p></div>
+<!--in-->
+  <div class="grid-item"><button type="button" onclick="document.getElementById('demo6').innerHTML = inCalculator(document.getElementById('input3').value)">ln</button></div>
+  <div class="grid-item"><p id="demo6"></p></div>
+<!--sin-->
+  <div class="grid-item"><button type="button" onclick="document.getElementById('demo7').innerHTML = sinCalculator(document.getElementById('input3').value)">sin</button></div>
+  <div class="grid-item"><p id="demo7"></p></div>
+<!--cos-->
+  <div class="grid-item"><button type="button" onclick="document.getElementById('demo8').innerHTML = cosCalculator(document.getElementById('input3').value)">cos</button></div>
+  <div class="grid-item"><p id="demo8"></p></div>
+<!--tan-->
+  <div class="grid-item"><button type="button" onclick="document.getElementById('demo9').innerHTML = tanCalculator(document.getElementById('input3').value)">tan</button></div>
+  <div class="grid-item"><p id="demo9"></p></div>
+<hr/>
+<h1> Fibonacci Sequence </h1>
+<button type="button" onclick="document.getElementById('demo10').innerHTML = fibonacciSequence()">Fibonacci(don't click)</button>
+<p id="demo10"></p>
 </div>
-
+<!--ButtonFest-->
 <script>
+/*----everything----*/
 function openLinks(evt, buttonName) {
   
   var i, tabContent, tabLinks;
@@ -98,9 +277,108 @@ function openLinks(evt, buttonName) {
   document.getElementById(buttonName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-
 document.getElementById("defaultOpen").click();
+/*----everything----*/
+/*----calculaTHOR----*/
+function addToScreen(x) {
+    document.getElementById("result").value=document.getElementById("result").value+x;
+     
+}
+function clearScreen()  {
+    document.getElementById("result").value = "";
+}  
+function answer(){
+	var text =document.getElementById("result").value;
+    
+   
+    if(text.includes("√")){
+    	text = text.replace('√','Math.sqrt(');
+        text = text+')'; 
+    }
+    
+    document.getElementById("result").value = eval(text);
+     
+}
+/*----calculaTHOR----*/
+/*----ConverTHOR----*/
+function poundConverter(valNum) {
+  document.getElementById("outputKilograms").innerHTML=valNum/2.2046;
+}
 
+function mileConverter(valNum) {
+  document.getElementById("outputKilometers").innerHTML=valNum*1.609344;
+}
+
+function gallonConverter(valNum) {
+  document.getElementById("outputLiters").innerHTML=valNum*3.785411784;
+}
+/*----ConverTHOR----*/
+/*----ButtonFest----*/
+function evenOrOdd (input){
+	if(input%2==0){
+    	return input +' is an even number';
+    }else{
+    	return input +' is an odd number';
+    }
+}
+function primeNumber (input){
+	foundOne=false;
+    divisor=0;
+    for(var i=2; i<input-1; i++){
+        if(input%i==0){
+        	foundOne=true;
+            divisor=i;
+            break;
+     	}
+	}    
+    if(foundOne){
+    return input + ' is not a prime number because it\'s divisible by ' + divisor;
+    }else{
+    return input + ' is a prime number';
+    }
+     
+}            
+//square
+function radicalCalculator (input){
+    return Math.sqrt(input); 
+}
+//square
+function squareCalculator (input){
+    return Math.pow(input,2);
+}   
+//log
+function logCalculator (input){
+   return Math.log(input)/Math.log(10);
+}
+//in
+function inCalculator (input){
+   return Math.log(input);
+}
+//sin
+function sinCalculator (input){
+   return Math.sin(input);
+}
+//cos
+function cosCalculator (input){
+    return Math.cos(input);
+}
+//tan
+function tanCalculator (input){
+    return Math.tan(input);
+}
+// fibonacci
+function fibonacciSequence(){
+var firstNumber = 0;
+var secondNumber = 1;
+var result = secondNumber + firstNumber
+    for(var i=1; i<100; i++){
+        document.write(result+"</br>");
+        result = firstNumber+secondNumber;
+        firstNumber = secondNumber;
+        secondNumber = result;
+    }
+} 
+/*----ButtonFest----*/
 </script>
      
 </body>
