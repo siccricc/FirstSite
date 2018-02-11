@@ -144,13 +144,37 @@ input[type=text] {
 }
 /*----CalculaTHOR----*/
 /*----ButtonFest----*/
+/*--Grid stuff--*/
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+}
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
-  font-size: 15px;
+  font-size: 30px;
   text-align: center;
 }
+/*--Grid stuff--*/
+/*--multiple buttons buttons--*/
+.multipleButtonsButtons {
+    height: 40px;
+    width: 212px;
+    padding: 0 10px;
+    background:#f2f2f2;
+    border-radius: 8px;
+    font-size: 17px;
+    line-height: 40px;
+    color: black;
+    text-shadow: 1px 1px #aaa;
+    text-align: center;
+    letter-spacing: 1px;
+    box-shadow: 1px 5px #0099e6;  
+    outline: 0;
+}
+/*--multiple buttons buttons--*/
 /*--Text Boxes--*/
 #input1 {
   width: 100%;
@@ -262,28 +286,29 @@ input[type=text] {
 <table>
 <div class="grid-container">
   <div class="grid-item"><input type="text" id="input3"/></div>
-<!--radical-->
-  <div class="grid-item"><button type="button" onclick="document.getElementById('demo3').innerHTML = radicalCalculator(document.getElementById('input3').value)"> √ ̅</button></div>
+<!--Answer-->
   <div class="grid-item"><p id="demo3"></p></div>
+<!--radical-->
+  <div class="grid-item"><button type="button" class="multipleButtonsButtons" onclick="document.getElementById('demo3').innerHTML = radicalCalculator(document.getElementById('input3').value)"> √ ̅</button></div>
+
 <!--square-->
-  <div class="grid-item"><button type="button" onclick="document.getElementById('demo4').innerHTML = squareCalculator(document.getElementById('input3').value)">x²</button></div>
-  <div class="grid-item"><p id="demo4"></p></div>
+  <div class="grid-item"><button type="button" class="multipleButtonsButtons" onclick="document.getElementById('demo3').innerHTML = squareCalculator(document.getElementById('input3').value)">x²</button></div>
+
 <!--logarithm-->
-  <div class="grid-item"><button type="button" onclick="document.getElementById('demo5').innerHTML = logCalculator(document.getElementById('input3').value)">log</button></div>
-  <div class="grid-item"><p id="demo5"></p></div>
+  <div class="grid-item"><button type="button" class="multipleButtonsButtons" onclick="document.getElementById('demo3').innerHTML = logCalculator(document.getElementById('input3').value)">log</button></div>
+
 <!--in-->
-  <div class="grid-item"><button type="button" onclick="document.getElementById('demo6').innerHTML = inCalculator(document.getElementById('input3').value)">ln</button></div>
-  <div class="grid-item"><p id="demo6"></p></div>
+  <div class="grid-item"><button type="button" class="multipleButtonsButtons" onclick="document.getElementById('demo3').innerHTML = inCalculator(document.getElementById('input3').value)">ln</button></div>
+
 <!--sin-->
-  <div class="grid-item"><button type="button" onclick="document.getElementById('demo7').innerHTML = sinCalculator(document.getElementById('input3').value)">sin</button></div>
-  <div class="grid-item"><p id="demo7"></p></div>
+  <div class="grid-item"><button type="button" class="multipleButtonsButtons" onclick="document.getElementById('demo3').innerHTML = sinCalculator(document.getElementById('input3').value)">sin</button></div>
+
 <!--cos-->
-  <div class="grid-item"><button type="button" onclick="document.getElementById('demo8').innerHTML = cosCalculator(document.getElementById('input3').value)">cos</button></div>
-  <div class="grid-item"><p id="demo8"></p></div>
+  <div class="grid-item"><button type="button" class="multipleButtonsButtons" onclick="document.getElementById('demo3').innerHTML = cosCalculator(document.getElementById('input3').value)">cos</button></div>
+
 <!--tan-->
-  <div class="grid-item"><button type="button" onclick="document.getElementById('demo9').innerHTML = tanCalculator(document.getElementById('input3').value)">tan</button></div>
-  <div class="grid-item"><p id="demo9"></p></div>
-<hr/>
+  <div class="grid-item"><button type="button" class="multipleButtonsButtons" onclick="document.getElementById('demo3').innerHTML = tanCalculator(document.getElementById('input3').value)">tan</button></div>
+</div>
 <h1> Fibonacci Sequence </h1>
 <button type="button" onclick="document.getElementById('demo10').innerHTML = fibonacciSequence()">Fibonacci(don't click)</button>
 <p id="demo10"></p>
